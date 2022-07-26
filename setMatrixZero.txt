@@ -1,0 +1,65 @@
+import java.util.Scanner;
+public class main {
+	public static void main(String[] args) {
+		int m,n;
+		Scanner sc =new Scanner(System.in);
+		System.out.println("enter row for matrix");
+		m=sc.nextInt();
+		System.out.println("enter col for matrix");
+		n=sc.nextInt();
+		System.out.println("enter matrix");
+		int[][] matrix1=new int[m][n];
+		int[][] matrix2=new int[m][n];
+		for (int i=0;i<m;i++){
+			for (int j=0;j<n;j++){
+				matrix1[i][j]=sc.nextInt();
+			}
+		}
+		System.out.println("beffor");
+		for (int i=0;i<m;i++){
+			for (int j=0;j<n;j++){
+				System.out.print(matrix1[i][j]);
+			}
+			System.out.println("");
+		}
+		for (int h=0;h<m;h++){
+			for (int k=0;k<n;k++){
+				matrix2[h][k]=matrix1[h][k];
+			}
+		}
+
+
+		System.out.println("matrix2 is");
+		for (int i=0;i<m;i++){
+			for (int j=0;j<n;j++){
+				System.out.print(matrix2[i][j]);
+			}
+			System.out.println("");
+		}
+		for (int i=0;i<m;i++){
+			for (int j=0;j<n;j++){
+				if(matrix2[i][j]==0){
+					System.out.println("calling fun  i:"+i+"j:"+j);
+					fun(m,n,i,j,matrix1);
+				}
+			}
+		}
+		System.out.println("after");
+		for (int i=0;i<m;i++){
+			for (int j=0;j<n;j++){
+				System.out.print(matrix1[i][j]);
+			}
+			System.out.println("");
+		}
+	}
+	public static void fun(int m,int n,int row,int col,int[][] matrix1){
+
+		for (int r =0;r<m;r++){
+			for (int c=0;c<n;c++){
+//
+				matrix1[row][c]=0;
+				matrix1[r][col]=0;
+			}
+		}
+	}
+}
