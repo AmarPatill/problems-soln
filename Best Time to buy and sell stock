@@ -1,3 +1,8 @@
+//For the given array [2 ,100 ,150 ,120] (these are the price of stacks at given minutes (minutes is index i)
+//the max profit can be achieved by buying the stock at minute 0 when its price is Rs.2 and selling it at minute 2 when price is Rs.150 
+//So the output will be 148
+
+
 import java.lang.*;
 import java.util.Scanner;
 
