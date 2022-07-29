@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.lang.*;
+import java.util.Scanner;
+
+import static java.lang.Math.pow;
+
+public class main {
+	public static void main(String[] args) {
+		int n;
+		ArrayList<Integer> arr=new ArrayList<>();
+		Scanner sc=new Scanner(System.in);
+		long mod=1000000007;
+		System.out.println("enter n");
+		n=sc.nextInt();
+		int q;
+		System.out.println("enter q:");
+		q=sc.nextInt();
+		long sum=0;
+		long pro=1;
+		long res;
+		if(q==1){
+			for(long i=1;i<n+1;i++){
+				sum=sum+i;
+			}
+			res=sum;
+			System.out.println(sum);
+		} else if (q==2) {
+			for(long i=0;i<n;i++){
+				pro=pro*(i+1);
+			}
+
+			pro=pro%mod;
+			res=pro;
+			System.out.println(pro);
+		}
+
+	}}
+
