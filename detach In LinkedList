@@ -99,7 +99,7 @@ public class main {
 
 }
 class Node{
-	//Class Node ,Node will  be forming of this class
+	//Class Node , Node will  be forming of this class
 		int data;
 		Node next;
 
