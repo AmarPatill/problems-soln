@@ -1,0 +1,111 @@
+
+
+
+public class main {
+	public static void main(String[] args) {
+
+
+		Node head=null;
+		head=inserts(head,1);
+		inserte(head,2);
+		inserte(head,3);
+		inserte(head,4);
+		inserte(head,5);
+		inserte(head,6);
+		inserte(head,7);
+		
+		fun(head);//this will make the list looped  in some part;
+		
+		display(head);//this will  display linkedlist for fixed itteration 
+		//for loop used as its a loop in linked list we will know after some repetition 
+		//a simple while lopp here would itterate forever so use forloop
+		
+		dd(head,4);//i have hardcodedly passed num 4  u should pass userinput 
+		System.out.println("");
+		displaya(head);//this will display all elements in LinkedList till end
+
+
+	}
+	static void dd(Node head,int t){
+		int c=0;
+		while (c<t){
+			head=head.next;
+			c++;
+		}
+		head.next=null;
+	}
+
+	static void fun(Node head){
+		//this method will cut the par of the linklist which is repeting or looped
+		Node tail=head;
+		Node temp=head;
+		int l=7;
+		int num=4;//this number 4 : i have hardcoded this number 4 useually in problem statements 
+		//this num will be provided to u by user so u should make it user  input
+		while(tail.next!=null){
+			tail=tail.next;
+		}
+		for(int i=0;i<num;i++){
+			temp=temp.next;
+		}
+		tail.next=temp;
+	}
+	static void deletlast(Node head){
+		//method to delet last element of the list
+		Node pre=head;
+		Node temp=head;
+		while (temp.next!=null){
+			pre=temp;
+			temp=temp.next;
+		}
+		pre.next=null;
+	}
+	static void displaya(Node head){
+		//Display it will display the linklist and its further elements
+
+		while (head.next!=null){
+			System.out.print(head.data+" ");
+			head=head.next;
+		}
+	}
+	static void display(Node head){
+		//Display it will display the linklist and its further elements
+		for(int i=0;i<15;i++){//i have taken any no 15(greater than length of LL which is 7) so that we can see that a loop is 
+			// created and some  numbers are repeted again
+			System.out.print(head.data+" ");
+			head=head.next;
+		}
+	}
+	static Node inserts(Node head, int data){
+		//this method will be used to insert new node at start
+		Node newnode =new Node(data);
+		newnode.next=head;
+		head=newnode;
+		return head;
+	}
+	static  void inserte(Node head,int data){
+		//this method will be used to insert new node at end
+		Node newnode =new Node(data);
+		if(head==null){
+			head=newnode;
+		}
+		Node temp=head;
+		while(temp.next!=null){
+			temp=temp.next;
+		}
+		temp.next=newnode;
+
+	}
+
+}
+class Node{
+	//Class Node ,Node will  be forming of this class
+		int data;
+		Node next;
+
+		Node(int data){
+			this.data=data;
+			next=null;
+		}
+	}
+
