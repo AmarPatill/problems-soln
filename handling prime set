@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    
+    public static void main(String[] args) {
+        int t=0;
+        Scanner sc=new Scanner(System.in);
+        t=sc.nextInt();
+        int[] arr1=new int[3];
+
+        for (int i=0;i<t;i++){
+            for(int j=0;j<3;j++){
+                arr1[j]=sc.nextInt();
+            }
+            fun(arr1);
+        }
+
+    }
+    static void fun(int[] arr1){
+        int a=arr1[0];
+        int b=arr1[1];
+        int k=arr1[2];
+        int p;
+        int u;
+        for(int i=a;i<=b;i++){
+            u=isprime(i);
+            if(u==0){
+                k--;
+            }
+            if(k==0){
+                p=i;
+                System.out.println(i );
+                break;
+            }
+        }if(k>0){
+            System.out.println(-1);
+        }
+
+
+    }
+
+    static int isprime(int num){
+        int g=0;
+        int c=555;
+        if(num==1){
+            return 1;
+        }
+        if(num==2){
+            return 0;
+        }
+        for(int i=2;i<num;i++){
+            g=num%i;
+            if(g==0){
+                c=0;
+            }
+        }
+        if(c==0){
+            return 1;
+
+        }else {
+            return 0;
+        }
+    }
+
+}
