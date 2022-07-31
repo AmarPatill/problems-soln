@@ -1,3 +1,28 @@
+/*
+You are given three integers A B K where A<B, 
+You have to find p such that it is closest to integer A and there are atleast K prime 
+numbers in range [A,P]where A<=P<=B.
+print minimum possible p or print -1 if no such possible integer
+
+eg: for input 4 12 2 :
+ A=4 B=12 K=2
+prime no. in range 4 to 12 are : 5 ,7 ,11 ,13
+k=2 means two prime no. ie 5,7
+so while traversing 4 ,5 ,6 ,7 till 7 we get two prime no. so p=7
+7 should be your output
+
+
+other eg:
+
+2 5 1 === 2
+2 5 2 === 3
+4 12 2 ===7
+3 17 7 ===-1
+5 5 1=== 5
+
+*/
+
+
 import java.util.Scanner;
 
 public class Solution {
