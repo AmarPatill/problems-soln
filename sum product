@@ -1,3 +1,9 @@
+
+/*
+first enter n then enter q if q is 1 then give sum of elements from 1  to n
+and if q=2 then product from 1 to n .
+but this code dont do well if the value is way to long long.
+*/
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.lang.*;
