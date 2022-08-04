@@ -1,0 +1,60 @@
+
+/*
+eg:
+arr1=[1,8,9,4,2,7,5]
+      -
+   -  -
+   -  -        -
+   -  -        -
+   -  -        -  -
+   -  -  -     -  -
+   -  -  -     -  -
+   -  -  -  -  -  -
+-  -  -  -  -  -  -
+1  8  9  4  2  7  5
+
+so if water is filled from wall 8 to wall 7 then it willl be filled till top of wall 7(index 6) and till 7 height of wall 8(index 1) 
+and as diff btw 8 and 7 is: index 6-1=5;
+and min height of wall or till water will be filled is: 7;
+sp 5*7 is the answer 25;
+
+*/
+
+
+
+import java.util.Scanner;
+
+
+public class main {
+	public static void main(String[] args) {
+		int n=9;
+
+		int[] arr1=new int[n];
+		Scanner sc=new Scanner(System.in);
+		for (int i = 0; i < n; i++) {
+			arr1[i]=sc.nextInt();
+		}
+		int dif=0;
+		int max=0;
+		int pro=0;
+		for (int i = 0; i < n; i++) {
+			for (int j = i; j < n; j++) {
+				if(i==j){
+					continue;
+				}
+				dif=j-i;
+				if (arr1[i]>arr1[j]){
+					pro=dif*arr1[j];
+				} else if (arr1[i]<arr1[j]) {
+					pro=dif*arr1[i];
+				} else if (arr1[i]==arr1[j]) {
+					pro=dif*arr1[i];
+				}
+				if(pro>max){
+					max=pro;
+				}
+			}
+		}
+		System.out.println(max);
+	}
+}
