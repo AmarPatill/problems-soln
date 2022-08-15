@@ -1,0 +1,39 @@
+/*
+Amar is celebrating Raksha Bandhan with his wife his 'N' sisters .Each sister wants to tie him 
+one rakhi having some integer value. The integer value for all'N' rakhis is provided in an 
+array.
+Amar wants the sum of values of all tied rakhis to be strictly positive.
+Your task is to tell him maximum rakhis he can tie to his hand.
+
+
+eg:
+2
+3 ,-3
+so answer is 1 as having only  3 gives a positive no. and adding -3 wil give 0;
+
+3
+1 ,-2 ,2
+answer is 3 as adding all 3 values would still give positive number;
+
+*/
+
+import java.util.*;
+class Solution {
+
+    public static int rakshaBandhan(int arr[], int n) {
+        // Write your code here.
+        Arrays.sort(arr);
+        long sum=0;
+        // usng long is always safe as long covers most of the test cases
+        int counter=0;
+        for(int i=n-1;i>=0;i--){
+            sum=sum+arr[i];
+            if(sum<=0){
+                break;
+            }
+            counter+=1;
+        }
+         
+        return counter;
+    }
+}
