@@ -1,0 +1,23 @@
+
+
+/*
+you are given tow integers X and N
+You have to return power X^N
+
+eg:
+4 3
+then 4*4*4=64
+*/
+
+
+class Solution {
+
+	public static long Pow(int X, int N) {
+		long pro=1;
+    // using long as it covers most test cases
+        for(int i=0;i<N;i++){
+            pro*=X;
+        }
+        return pro;
+	}
+}
