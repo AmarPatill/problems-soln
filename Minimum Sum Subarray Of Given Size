@@ -1,0 +1,39 @@
+/*
+
+You have been given  an array of integers consisting of N integers and a positive integer K.
+Your taskk is to find a subarray(contigous) of size K such that the sum of its elements is min.
+
+eg:
+8 4
+1 -4 2 10 -2 3 1 0 -20
+
+here 8 is N and given array is of length 9 so input will olny till  0;
+so min sum of a subarray is 2 which is -2 3 1 0 =2
+
+*/
+
+
+import java.util.ArrayList;
+
+public class Solution
+{
+public static int minSubarraySum(ArrayList<Integer> arr, int n, int k)
+    {
+        
+    int sum=2147483646;
+    int one=0;
+    if(n==1){
+        return arr.get(0);
+    }
+    for(int i=0;i<n-k+1;i++){
+        int p=0;
+        for(int j=0; j<k;j++){
+            p+=arr.get(i+j);
+        }
+        if(p<sum){
+            sum=p;
+        }
+    }
+    return sum;
+    }
+}
