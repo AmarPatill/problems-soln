@@ -1,7 +1,7 @@
 /*
 You are given three integers A B K where A<B, 
 You have to find p such that it is closest to integer A and there are atleast K prime 
-numbers in range [A,P]where A<=P<=B.
+numbers in range [A,P]where  A<=P<=B.
 print minimum possible p or print -1 if no such possible integer
 
 eg: for input 4 12 2 :
