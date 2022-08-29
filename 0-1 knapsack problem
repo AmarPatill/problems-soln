@@ -1,38 +1,51 @@
 // A Java program to print all subsets of a set
 import java.io.IOException;
 
-class Main
+import java.io.*;
+
+import java.util.*;
+public class Main
 {
-	// Print all subsets of given set[]
-	static void printSubsets(char set[])
-	{
-		int n = set.length;
-
-		// Run a loop for printing all 2^n
-		// subsets one by one
-		for (int i = 0; i < (1<<n); i++)
-		{
-			System.out.print("{ ");
-
-			// Print current subset
-			for (int j = 0; j < n; j++)
-
-				// (1<<j) is a number with jth bit 1
-				// so when we 'and' them with the
-				// subset number we get which numbers
-				// are present in the subset and which
-				// are not
-				if ((i & (1 << j)) > 0)
-					System.out.print(set[j] + " ");
-
-			System.out.println("}");
-		}
-	}
-
-	// Driver code
-	public static void main(String[] args)
-	{
-		char set[] = {'a', 'b', 'c'};
-		printSubsets(set);
-	}
+  public static void main (String[]args) throws Exception
+  {
+    Scanner scn = new Scanner (System.in);
+    int n = scn.nextInt ();
+    int[] arr = new int[n];
+    for (int i = 0; i < arr.length; i++)
+    {
+      arr[i] = scn.nextInt ();
+    }
+    int limit = (int) Math.pow (2, arr.length); //calculating the number of subsets
+    for (int i = 0; i < limit; i++)
+    {
+      //convert i to binary and use 0's and 1's
+      //to check if an array's element is to be printed or not
+      String set = ""; 
+      // we make use of set to print in required order
+      int temp = i;
+      // we store i because we need to use value
+      // of i without manipulating the actual i
+      // as i is the outer loop iterator
+      for (int j = arr.length - 1; j > = 0; --j)
+      {
+        //calculating the binary, extracting //
+        // the remainder one and by one
+        // and putting required element
+        // in the String to be printed.
+        int rem = temp % 2;
+        temp = temp / 2;
+        if (rem == 0)   //nothing to be printed
+        {
+          set = "-    " + set;
+        }
+        else
+        {
+          // we print the element, so we add it to our answer string
+          set = arr[j] + "    " + set;
+        }
+      }
+      System.out.println (set);
+      // printing the required pattern line-by-line
+    }
+  }
 }
