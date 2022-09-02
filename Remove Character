@@ -1,3 +1,13 @@
+
+/*
+Remove the character from the string :
+eg:
+amaraoaa
+a
+then output is: mro
+*/
+
+
 class firstproject {
 
 
@@ -8,14 +18,16 @@ class firstproject {
 
 		char[] ss=intp.toCharArray();
 		System.out.println(ss);
+		Char toRemove = 'r';
 		for (int i = 0; i <intp.length(); i++) {
 
-			if(intp.charAt(i)=='r'){
+			if(intp.charAt(i)==toRemove){
 				ss[i]=' ';
 			}
 
 		}
 		String opt = new String(ss);
+		opt = opt.replaceAll("\\s", "");
 		System.out.println(opt);
 
 	}
