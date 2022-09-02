@@ -1,0 +1,22 @@
+class firstproject {
+
+
+
+	public static void main(String[] args)
+	{
+		String intp="eer";
+
+		char[] ss=intp.toCharArray();
+		System.out.println(ss);
+		for (int i = 0; i <intp.length(); i++) {
+
+			if(intp.charAt(i)=='r'){
+				ss[i]=' ';
+			}
+
+		}
+		String opt = new String(ss);
+		System.out.println(opt);
+
+	}
+}
