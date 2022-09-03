@@ -1,0 +1,68 @@
+
+/*
+for eg output for the eg :
+
+3,2,-6,1,0  should be 4 first fositive int is present ie. 1 also 2,3 are present
+4 is not which is next positive int
+
+0,1,2,3,4   should be 5
+
+
+*/
+
+
+
+
+import java.util.ArrayList;
+
+
+import java.util.Scanner;
+
+import java.util.*;
+class firstproject {
+
+
+
+	public static void main(String[] args)
+	{
+		int[] arr1 = new int[5];
+		int theNum=0;
+		Scanner sc =new Scanner(System.in);
+		for (int i = 0; i < 5; i++) {
+			arr1[i]=sc.nextInt();
+		}
+		List<Integer> list=new ArrayList<Integer>();
+
+		for (int i = 0; i < arr1.length ; i++) {
+			list.add(i+1);
+		}
+		int count=0;
+		for (int i = 0; i < arr1.length; i++) {
+			if(list.contains(arr1[i])){
+				int add=list.indexOf(arr1[i]);
+				list.set(add,0);
+				System.out.print(list.get(count));
+				count++;
+
+			}
+		}
+		System.out.println(" ");
+		for (int i = 0; i < list.size(); i++) {
+			System.out.print(list.get(i));
+
+		}
+		int c=0;
+		for (int i = 0; i < list.size(); i++) {
+			if(list.get(i)!=0){
+				theNum=list.get(i);
+				break;
+			}
+			c++;
+		}
+		if(c==list.size()){
+			theNum=c+1;
+		}
+		System.out.println("the number is :" + theNum);
+
+	}
+}
