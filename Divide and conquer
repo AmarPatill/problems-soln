@@ -1,0 +1,52 @@
+class firstproject {
+
+
+	public  static void fun(int[] arr1,int low , int high ,frr max , frr min){
+		// the conquer part
+    if(low==high){
+			if(arr1[high]<min.num){
+				min.num=arr1[high];
+			}
+			if(arr1[low]>max.num){
+				max.num=arr1[low];
+			}return;
+		}
+    // if the array consists of oonly two numbers.
+		if((high-low)==1){
+			if(arr1[low]<arr1[high]){
+				if(arr1[low]< min.num){
+					min.num=arr1[low];
+				}
+				if(arr1[high]> max.num){
+					max.num=arr1[high];
+				}
+			}else {
+				if(arr1[high]< min.num){
+					min.num=arr1[high];
+				}
+				if(arr1[low]> max.num){
+					max.num=arr1[low];
+				}
+			}return;
+		}
+
+		int mid=(low+high)/2;
+
+		fun(arr1,low,mid,max,min);
+		fun(arr1,mid+1,high,max,min);
+	}
+
+	public static void main(String[] args) {
+		int[] arr1={-7,-7};
+		frr max=new frr(Integer.MAX_VALUE);
+		frr min =new frr(Integer.MIN_VALUE);
+		fun(arr1,0, arr1.length-1, min,max);
+		System.out.println("max : " +max.num + "min : "+min.num);
+
+	}}
+class frr{
+	public int num;
+	public frr(int num){
+		this.num=num;
+	}
+}
