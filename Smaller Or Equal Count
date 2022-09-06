@@ -1,0 +1,33 @@
+/*
+
+We have been given 2 arrays a (of size n)and b(of size m)  we have to return a list containing numbers which represents number of elements which are smaller than elements in a
+eg:
+
+a= [ 2, 4, 1 ,3]
+b = [3 , 5]
+
+ output  : [0 , 1, 0 ,1]
+
+*/
+
+import java.util.*;  
+public class Solution {
+    public static List<Integer> countSmallerOrEqual(int[] a, int[] b, int n, int m) {
+        // Write your code here!
+        
+        int c1=0;
+        Arrays.sort(b);
+        List<Integer> alist=new ArrayList<Integer>(n);
+        for( int i=0;i<n;i++){
+            c1=0;
+            for(int j=0;j<m;j++){
+                if(a[i]<b[j]){
+                    break;
+                }
+                c1++;
+            }
+            alist.add(c1);
+        }
+        return alist;
+    }
+}
