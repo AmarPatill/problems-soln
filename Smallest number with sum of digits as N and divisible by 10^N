@@ -1,0 +1,61 @@
+/*
+Find the smallest number such that the sum of its digits is N and it is divisible by 10N.
+Input: N = 5
+Outptut: 500000
+Explanation: Sum of digits of 500000
+is 5 and divisible by 105.
+
+*/
+//{ Driver Code Starts
+//Initial Template for Java
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+{
+    public static void main(String[] args) throws IOException
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine().trim());
+        while(T-->0)
+        {
+            int n = Integer.parseInt(br.readLine().trim());
+            Solution ob = new Solution();
+            String ans = ob.digitsNum(n);
+            System.out.println(ans);           
+        }
+    }
+}
+
+// } Driver Code Ends
+
+
+//User function Template for Java
+
+class Solution
+{
+    public String digitsNum(int N)
+    {
+        List<String> ls=new ArrayList<String>();
+
+        if(N==0){
+            String o="0";
+            return(o);
+        }
+        if(N%9!=0){
+            int i=N%9;
+            String s=Integer.toString(i);
+            ls.add(s);
+        }
+        for(int i=1;i<=(N/9);++i){
+            String h="9";
+            ls.add(h);
+        }
+        for(int i=1;i<=N;++i){
+            ls.add("0");
+        }
+        String st=String.join("",ls);
+        return(st);
+    }
+}
