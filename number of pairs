@@ -1,0 +1,72 @@
+/*
+Input: 
+M = 3, X[] = [2 1 6] 
+N = 2, Y[] = [1 5]
+Output: 3
+Explanation: 
+The pairs which follow xy > yx are 
+as such: 21 > 12,  25 > 52 and 61 > 16 .
+
+*/
+
+
+
+//{ Driver Code Starts
+//Initial Template for Java
+
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+
+class Main 
+{
+    	public static void main (String[] args) throws Exception
+	{
+	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int t = Integer.parseInt(br.readLine());
+        for(int g = 0;g < t;g++)
+        {
+            String[] str = (br.readLine()).trim().split(" ");
+            int M = Integer.parseInt(str[0]);
+            int N = Integer.parseInt(str[1]);
+            
+            int[] x = new int[M];
+            str = (br.readLine()).trim().split(" ");
+            for(int i = 0;i< M;i++)
+                x[i] = Integer.parseInt(str[i]);
+                
+            str = (br.readLine()).trim().split(" ");
+            int[] y = new int[N];
+            for(int i = 0;i< N;i++)
+            {
+                y[i] = Integer.parseInt(str[i]);
+                
+            }
+            System.out.println(new Solution().countPairs(x, y, M, N));
+           
+        }
+	}
+}
+
+
+//User function Template for Java
+
+class Solution
+{
+    
+    // x[], y[]: input array elements
+    // M, N: size of arrays x[] and y[] respectively
+    //Function to count number of pairs such that x^y is greater than y^x.
+    static long countPairs(int x[], int y[], int M, int N)
+    {
+        int t=0;
+        for(int i=0;i<M;i++){
+            for(int j =0;j<N;j++){
+                if(Math.pow(x[i],y[j])> Math.pow(y[j],x[i])){
+                    t++;
+                }
+            }
+        }
+        return(t);
+    }
+}
