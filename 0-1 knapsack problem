@@ -1,3 +1,8 @@
+/*
+
+0-1 knpsack general problem
+*/
+
 class firstproject {
 
 	static int knapSack(int W, int wt[], int val[], int n)
@@ -31,4 +36,5 @@ class firstproject {
 		System.out.print(knapSack(W, wt, val, n));
 
 	}
+	
 }
