@@ -1,0 +1,69 @@
+/*
+
+You are given an array Arr of size N containing non-negative integers. Your task is to choose the minimum number
+of elements such that their sum should be greater than the sum of the rest of the elements of the array.
+
+Input:
+N = 4 
+Arr[] = {2, 17, 7, 3}
+Output:
+1
+Explanation:
+If we only select element 17, the sum of the
+rest of the elements will be (2+3+7)=12.
+So the answer will be 1.
+
+*/
+
+//{ Driver Code Starts
+//Initial Template for Java
+
+import java.io.*;
+import java.util.*;
+import java.util.Collections;
+
+
+class GFG{
+    public static void main(String args[]) throws IOException { 
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        
+        while(t > 0){
+            int N = sc.nextInt();
+            int[] Arr = new int[N];
+            for (int i = 0; i < N; ++i){
+                Arr[i] = sc.nextInt();
+            }
+            Solution ob = new Solution();
+            int ans = ob.minSubset(Arr,N);
+            System.out.println(ans);
+            t--;
+        }
+    }
+}
+// } Driver Code Ends
+
+
+//User function Template for Java
+
+class Solution { 
+    int minSubset(int[] Arr,int N) { 
+        long halfSum=0;
+        for(int i=0;i<N;i++){
+            halfSum=halfSum+Arr[i];
+        }
+        halfSum=halfSum/2;
+        Arrays.sort(Arr);
+        int res=0;
+        long curr_sum=0;
+        
+        for(int i=N-1;i>=0;i--){
+            curr_sum+=Arr[i];
+            res++;
+            if(curr_sum >halfSum){
+                return res;
+            }
+        }
+        return res;
+    }
+}
