@@ -1,0 +1,29 @@
+/*
+Return square of  the given number without using multiplication(*) , division(/) pow function, or square function;
+2:
+4
+
+
+-6:
+36
+
+*/
+import java.util.* ;
+import java.io.*; 
+import java.util.ArrayList;
+
+public class Solution 
+{
+    public static int calculateSquare(int num) 
+    {
+        int n=0;
+        num=Math.abs(num);
+
+        for(int i=0;i<num;i++){
+            for(int j=0;j<num;j++){
+                n++;
+            }
+        }
+        return n;
+    }
+}
