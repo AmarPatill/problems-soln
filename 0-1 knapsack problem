@@ -36,5 +36,4 @@ class firstproject {
 		System.out.print(knapSack(W, wt, val, n));
 
 	}
-	
 }
